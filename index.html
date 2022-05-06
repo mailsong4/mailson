@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <title>Formulário de logística reversa</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="formulario.css" media="screen" />
+ 
+         </head>
+		 
+    <body>
+        <div class="box">
+            
+                    <legend><b>Logística Reversa>>>>>>>>>></b></legend>
+                    <br>
+                    <p><b>Empresa</b></p>
+                    <label for="Lyor">Lyor</label>
+                    <input type="radio" id="Lyor" name="Empresa" value="Lyor" required>
+                    <label for="Rojemac">Rojemac</label>
+                    <input type="radio" id="Rojemac" name="Empresa" value="Rojemac" required>
+                         
+                    </div>
+                    <br><br>
+                    <form form method="POST" action="verifica.php">
+                    <div class="inputBox"></div>
+                         <label for="Data Solicitação"><b>Data Solicitação</b></label>
+                         <input type="date" name="data" id="Data Solicitação" class= "inputUser">
+                    
+                    <div>
+                    <br><br>
+                    <title>DADOS CADASTRAIS</title>
+                    <div class="inputBox"></div>
+                         <label for="Cnpj">Cnpj</label>
+                         <input type="text" name="cnpj" id="Cnpj" class= "inputUser" required>
+                         <label for="Razão Social">Razão Social</label>
+                         <input type="text" name="rsocial" id="Razão Social" class= "inputUser">
+                         </div>
+                    <br><br>
+                    
+                    <div class="inputBox"></div>
+                         <label for="Representante">Representante</label>
+                         <input type="text" name="representante" id="Representante" class= "inputUser">
+                    
+                    <div>
+                    <br><br>
+
+                    <div class="inputBox"></div>
+                         <label for="E-mail">E-mail</label>
+                         <input type="email" name="email" id="E-mail" class= "inputUser">
+                         <label for="Telefone">Telefone</label>
+                         <input type="text" name="fone" id="Telefone" class= "inputUser">
+                    
+                    </div>
+                    <br><br>
+                    
+                    <div class="inputBox"></div>
+                         <label for="CEP">CEP</label>
+                         <input type="text" name="cep" id="CEP" class= "inputUser">
+                    
+                    <div>
+                    <br><br>
+                    
+                    <div class="inputBox"></div>
+                         <label for="Endereço">Endereço</label>
+                         <input type="text" name="endereco" id="Endereço" class= "inputUser">
+                         <label for="Número">Número</label>
+                         <input type="text" name="numero" id="numero" class= "inputUser">
+                         <label for="Cidade">Cidade</label>
+                         <input type="text" name="cidade" id="Cidade" class= "inputUser">
+                    
+                    </div>
+                    <br><br>
+                    
+                    <div class="inputBox"></div>
+                         <label for="Bairro">Bairro</label>
+                         <input type="text" name="bairro" id="Bairro" class= "inputUser">
+                         <label for="UF">UF</label>
+                         <input type="text" name="estado" id="UF" class= "inputUser">
+                    
+                    <br><br>
+                    
+                    <p><b>Itens</b></p>   
+                    <div id="formulario">
+                    <div class="form-group">
+                    <label for="Nota Fiscal">Nota Fiscal</label>
+                    <input type="text" name="Nota Fiscal" id="Nota Fiscal" class= "inputUser" placeholder="Digite a Nota Fiscal de Venda" required>
+                    <label>Código: </label>
+                    <input type="text" name="titulo[]" placeholder="Digite o Código do Fornecedor"><br><br>
+                    <label>Descrição: </label>
+                    <input type="text" name="titulo[]" placeholder="Descrição do Produto"><br><br>
+                    <label>Qtde:</label>
+                    <input type="text" name="titulo[]" placeholder="Digite a Quantidade"><br><br>
+                    <label>Observação:</label>
+                    <input type="text" name="titulo[]" placeholder="Descreva a Avaria"><br><br>
+                    
+                </div>
+                
+            </div>
+            <button type="button" id="add-campo">+ Itens</button>
+            <div class="form-group">
+                    <div>
+                    <br>
+
+                         <p>Solicita Emissão de NFD?</p>
+                         <input type="radio" id="Sim" name="Solicita Emissão de NFD?" value="Sim"required>
+                         <label for="Sim">Sim</label>
+                         <input type="radio" id="Não" name="Solicita Emissão de NFD?" value="Não"required>
+                         <label for="Não">Não</label>
+
+                    <div>
+                    <br><br>
+
+                    <div class="inputBox"></div>
+                         <label>Informações Complementares</label>
+                         <textarea row="6" style="width: 26em" id="Observação" name="Observação" placeholder="Descreva o ocorrido"></textarea>
+                    <div>
+                    <br><br>                    
+                    
+                         <input type="submit" name="submit" id="submit">
+                         </div>
+        </form>
+
+        <script>
+            //https://api.jquery.com/click/
+            $("#add-campo").click(function () {
+				//https://api.jquery.com/append/
+                $("#formulario").append('<label for="Nota Fiscal">Nota Fiscal</label> <input type="text" name="Nota Fiscal" id="Nota Fiscal" class= "inputUser" placeholder="Digite a Nota Fiscal de Venda" required> <label>Código: </label> <input type="text" name="titulo[]" placeholder="Digite o Código do Fornecedor"><br><br> <label>Descrição: </label> <input type="text" name="titulo[]" placeholder="Descrição do Produto"><br><br>Qtde:</label> <input type="text" name="titulo[]" placeholder="Digite a Quantidade"><br><br> <label>Observação:</label> <input type="text" name="titulo[]" placeholder="Descreva a Avaria"><br><br>');
+            });
+        </script>
+    </body>
+</html>
